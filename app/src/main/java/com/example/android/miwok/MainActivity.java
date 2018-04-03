@@ -18,6 +18,7 @@ package com.example.android.miwok;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         TextView colors = (TextView) findViewById(R.id.colors);
         TextView family = (TextView) findViewById(R.id.family);
         TextView phrases = (TextView) findViewById(R.id.phrases);
-
 
         // Set on click listener on the numbers view
         numbers.setOnClickListener(new View.OnClickListener() {
