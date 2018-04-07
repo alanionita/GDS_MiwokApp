@@ -19,21 +19,38 @@ import java.util.ArrayList;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     WordAdapter(Context context, ArrayList<Word> words) {
-        super(context, R.layout.list_item, words);
+        super(context, 0, words);
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-        View customView = layoutInflater.inflate(R.layout.list_item, parent, false);
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        // Check if the existing view is being reused, otherwise inflate the view
+        View customView = convertView;
+        if (customView == null) {
+            customView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.list_item, parent, false
+            );
+        }
 
+        // Get {@link Word item} at this position in the list
         Word arrayListItem = getItem(position);
+
+        // Find the TextViews from the list_item.xml layout
         TextView miwokWord = (TextView) customView.findViewById(R.id.miwok_word);
         TextView defaultWord = (TextView) customView.findViewById(R.id.default_word);
 
-        miwokWord.setText(arrayListItem.getMiwokWord());
-        defaultWord.setText(arrayListItem.getDefaultWord());
+        /*
+            Set the values in the list_item.xml to the values from the
+            current {@link Word item} in the list, after checking that arrayListItem
+            is not null
+        */
+        if (arrayListItem != null) {
+            miwokWord.setText(arrayListItem.getMiwokWord());
+            defaultWord.setText(arrayListItem.getDefaultWord());
+        }
 
+        // Return the updated list_item view to it can be included in the list view
         return customView;
     }
 }
