@@ -23,6 +23,10 @@ public class Word {
     }
 
     // define the getters for the variables housed in the class
-    public String getDefaultWord () { return mDefaultWord; };
-    public String getMiwokWord () { return mMiwokWord; };
+    public String getDefaultWord () {
+        return mDefaultWord;
+    };
+    public String getMiwokWord () {
+        return mMiwokWord;
+    };
 }

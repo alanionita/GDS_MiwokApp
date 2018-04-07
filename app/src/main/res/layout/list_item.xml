@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginTop="16dp"
-    android:layout_marginLeft="16dp">
+    android:padding="@dimen/list_item_standard_padding_margin"
+    android:layout_marginLeft="@dimen/list_item_standard_padding_margin">
     
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/english_word"
+        android:id="@+id/default_word"
         tools:text="one"/>
 
 </LinearLayout>
