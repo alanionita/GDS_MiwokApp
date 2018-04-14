@@ -12,10 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/**
- * Created by alanionita on 04/04/2018.
- */
-
 public class WordAdapter extends ArrayAdapter<Word> {
 
     WordAdapter(Context context, ArrayList<Word> words) {
