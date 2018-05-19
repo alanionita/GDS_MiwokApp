@@ -19,4 +19,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_item_standard_padding_margin">16dp</dimen>
+    <dimen name="text_size_sections">18sp</dimen>
 </resources>

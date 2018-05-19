@@ -3,21 +3,41 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/list_item_standard_padding_margin"
-    android:layout_marginLeft="@dimen/list_item_standard_padding_margin">
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/miwok_word"
-        tools:text="lutti"/>
+    android:layout_height="@dimen/list_item_height"
+    android:orientation="horizontal"
+    android:minHeight="@dimen/list_item_height"
+    android:background="@color/tan_background">
 
-    <TextView
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height" />
+
+    <LinearLayout
+        android:id="@+id/list_word_section"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/default_word"
-        tools:text="one"/>
+        android:layout_height="@dimen/list_item_height"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/list_item_standard_padding_margin"
+        android:paddingTop="@dimen/list_item_standard_padding_margin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/miwok_word"
+            tools:text="lutti"
+            android:textSize="@dimen/text_size_sections"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/default_word"
+            tools:text="one"
+            android:textSize="@dimen/text_size_sections"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
 
 </LinearLayout>
