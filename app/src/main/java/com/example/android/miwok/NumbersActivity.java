@@ -66,7 +66,6 @@ public class NumbersActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     int audioLink = words.get(i).getAudioResourceID();
-
                     int result = am.requestAudioFocus(afcListener,
                             +AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                     if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
