@@ -1,12 +1,9 @@
 package com.example.android.miwok;
 
 import android.content.Context;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
@@ -41,10 +39,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word arrayListItem = getItem(position);
 
         // Find the views from the list_item.xml layout
-        TextView miwokWord = (TextView) customView.findViewById(R.id.miwok_word);
-        TextView defaultWord = (TextView) customView.findViewById(R.id.default_word);
+        TextView miwokWord = (TextView) customView.findViewById(R.id.miwok_text_view);
+        TextView defaultWord = (TextView) customView.findViewById(R.id.default_text_view);
         ImageView imageV = (ImageView) customView.findViewById(R.id.image);
-        LinearLayout listWordSection = (LinearLayout) customView.findViewById(R.id.list_word_section);
+        LinearLayout listWordSection = (LinearLayout) customView.findViewById(R.id.text_container);
 
         // Find the color that the resource id maps to
         int activityColor = ContextCompat.getColor(getContext(),localActivityColor);
