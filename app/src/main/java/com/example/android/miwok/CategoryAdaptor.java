@@ -12,11 +12,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 class CategoryAdaptor extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 4;
-    private String tabTitles[] = new String[]{"Numbers", "Family", "Colors", "Phrases"};
-    private Context context;
+    private Context contContext;
 
-    public CategoryAdaptor(FragmentManager fm) {
+    public CategoryAdaptor(Context context, FragmentManager fm) {
         super(fm);
+        contContext = context;
     }
 
     @Override
@@ -41,6 +41,14 @@ class CategoryAdaptor extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-        return tabTitles[position];
+        if (position == 0) {
+            return contContext.getString(R.string.category_numbers);
+        } else if (position == 1) {
+            return contContext.getString(R.string.category_family);
+        } else if (position == 2) {
+            return contContext.getString(R.string.category_colors);
+        } else {
+            return contContext.getString(R.string.category_phrases);
+        }
     }
 }
