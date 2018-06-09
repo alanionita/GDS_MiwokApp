@@ -15,11 +15,9 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,56 +28,14 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Find the views that lead to each category
-        TextView numbers = (TextView) findViewById(R.id.numbers);
-        TextView colors = (TextView) findViewById(R.id.colors);
-        TextView family = (TextView) findViewById(R.id.family);
-        TextView phrases = (TextView) findViewById(R.id.phrases);
+        // Find the view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        // Set on click listener on the numbers view
-        if (numbers != null) {
-            numbers.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent numbersSubviewIntent = new Intent(MainActivity.this, NumbersActivity.class);
-                    startActivity(numbersSubviewIntent);
-                }
-            });
-        }
+        // Create an adapter that knows which fragment should be shown on each page
+        CategoryAdaptor adapter = new CategoryAdaptor(getSupportFragmentManager());
 
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
 
-        // Set on click listener on the colors view
-        if (colors != null) {
-            colors.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent colorsSubviewIntent = new Intent(MainActivity.this, ColorsActivity.class);
-                    startActivity(colorsSubviewIntent);
-                }
-            });
-        }
-
-
-        // Set on click listener on the family view
-        if (family != null) {
-            family.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent familySubviewIntent = new Intent(MainActivity.this, FamilyActivity.class);
-                    startActivity(familySubviewIntent);
-                }
-            });
-        }
-
-        // Set on click listener on the phrases view
-        if (phrases != null) {
-            phrases.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent phrasesSubviewIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-                    startActivity(phrasesSubviewIntent);
-                }
-            });
-        }
     }
 }
